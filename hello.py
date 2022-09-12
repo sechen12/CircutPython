@@ -4,14 +4,14 @@ import time
 
 
 dot = neopixel.NeoPixel(board.NEOPIXEL, 1)
-dot.brightness = 0.5 
+dot.brightness = 0.1 
 
 print("Make it red!")
 
 while True:
-    R = 56
+    R = 0
     G = 90
-    B = 57
+    B = 20
     time.sleep(1)
     dot.fill((R,G, B))
     time.sleep(1)
