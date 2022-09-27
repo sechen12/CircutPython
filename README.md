@@ -11,12 +11,29 @@ This repository will actually serve as a aid to help you get started with your o
 ## Hello_CircuitPython
 
 ### Description & Code
-Description goes here
-
+The neopixel blinks with the color of my choice.
 Here's how you make code look like code:
 
 ```python
-Code goes here
+import board
+import neopixel
+import time
+
+
+dot = neopixel.NeoPixel(board.NEOPIXEL, 1) # connects neopixel to CircuitPython
+dot.brightness = 0.1 # how bright the pixel is
+
+print("Make it red!") # printing on monitor
+
+while True:
+    R = 0 # no red
+    G = 90 # mostly green
+    B = 20 # some blue
+    time.sleep(1)
+    dot.fill((R, G, B))
+    time.sleep(1)
+    dot.fill((0, 0, 0))
+    print("R:",R," G:", G," B:",B)
 
 ```
 
@@ -24,40 +41,47 @@ Code goes here
 ### Evidence
 
 
-![spinningMetro_Optimized](https://user-images.githubusercontent.com/54641488/192549584-18285130-2e3b-4631-8005-0792c2942f73.gif)
-
-
-And here is how you should give image credit to someone, if you use their work:
-
-Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlybrkr=8931d0bc)
-
+file:///C:/Users/schen12/Pictures/Camera%20Roll/WIN_20220912_15_26_30_Pro.mp4
 
 
 ### Wiring
-Make an account with your google ID at [tinkercad.com](https://www.tinkercad.com/learn/circuits), and use "TinkerCad Circuits to make a wiring diagram."  It's really easy!  
-Then post an image here.   [here's a quick tutorial for all markdown code, like making links](https://guides.github.com/features/mastering-markdown/)
+No wiring, coding for the Metro.
 
 ### Reflection
-What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience?  Your ultimate goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person.
-
-
+I learned that CircuitPython is very different from C++. I didn't really understand how the code worked, and had a lot fo help from my teacher. I did, however, get a better understanding of why we had to download so many files to get out code running.
 
 
 ## CircuitPython_Servo
 
 ### Description & Code
-
+I can code the servo to move.
 ```python
-Code goes here
+"""CircuitPython Essentials Servo standard servo example"""
+import time #necessary for making the sleep function (o.5)
+import board #connects board to code
+import pwmio 
+from adafruit_motor import servo #imports the servo
+
+
+pwm = pwmio.PWMOut(board.D3, duty_cycle=2 ** 15, frequency=50) #line tells board where to put power
+
+
+my_servo = servo.Servo(pwm)
+
+while True:
+    for angle in range(0, 180, 5): #power intervals
+        my_servo.angle = angle
+        time.sleep(0.05) #pauses for 0.05 seconds
+    for angle in range(180, 0, -5): 
+        time.sleep(0.05) #pauses for 0.05 seconds
 
 ```
 
 ### Evidence
 
-Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
-
+file:///C:/Users/schen12/Pictures/Camera%20Roll/WIN_20220927_15_07_00_Pro.mp4
 ### Wiring
-
+https://www.tinkercad.com/things/16a7UBZ3Cle-neat-gogo-blad/editel?tenant=circuits
 ### Reflection
 
 
@@ -66,7 +90,58 @@ Pictures / Gifs of your work should go here.  You need to communicate what your 
 ## CircuitPython_LCD
 
 ### Description & Code
+The LCD displays the count according to how many times the button is clicked.
+```python
+import board
+import time
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+from digitalio import DigitalInOut, Direction, Pull
 
+# get and i2c object
+i2c = board.I2C()
+count = 0
+btn = DigitalInOut(board.D7)
+btn.direction = Direction.INPUT
+btn.pull = Pull.UP
+
+# some LCDs are 0x3f... some are 0x27.
+lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16)
+cur_state = True
+prev_state = True
+buttonPress = 0 # making an integer for the count of the button presses to be stored in
+
+while True:
+    cur_state = btn.value # the current state is the buttons' value
+    if cur_state != prev_state: # if it's not the current state, it's the previous state
+        if not cur_state: # if not current state then do the following:
+            buttonPress = buttonPress + 1 # the count of the button goes up by 1
+            lcd.clear() # clears the screen after stating the button count
+            lcd.set_cursor_pos(0, 0)
+
+            lcd.set_cursor_pos(1, 0) # setting where the lcd is going to print the text
+  
+            lcd.print(str(buttonPress)) # on the lcd, print the amount of button press
+        else:
+            lcd.clear()
+            lcd.print("BTN is up") # when the button isn't pressed state "BTN is up"
+
+    prev_state = cur_state # previous state equals the current state
+
+```
+
+### Evidence
+file:///C:/Users/schen12/Pictures/Camera%20Roll/WIN_20220923_15_34_47_Pro.mp4
+
+### Wiring
+https://www.tinkercad.com/things/d6I0Mx941Rc-tremendous-snicket-krunk/editel?tenant=circuits
+### Reflection
+
+I learned that I need to state the counter before I set the lcd and wehre to write it. I also learned that if you don't set the cursor, the numbers will be printed at random. I also had to state that the current state was equalivalent to the previous state. I had trouble with stating the integers (I didn't state enough).
+## NextAssignment
+
+### Description & Code
+The neopixel changes color according to the distance away from the ultrasonic sensor.
 ```python
 import time
 import board
@@ -130,28 +205,12 @@ while True: #loop; runs forever
 ```
 
 ### Evidence
-
-Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
+file:///C:/Users/schen12/Pictures/Camera%20Roll/WIN_20220920_14_49_41_Pro.mp4
 
 ### Wiring
 https://www.tinkercad.com/things/67dsxG9fJBI-super-kup/editel?tenant=circuit
-### Reflection
 
+### Reflection
 At first I trouble shot this project on my own, but after realizing that I had no idea was doing, and still being in Arduino mode, Chris thankfully gave me the code to the pixel. I spent an entire class period commenting the code, and figuring out what different words did, and how they effective the outputs. I learned how to better use the map() function, and the importance of the indentations. I learned that the "While True" function runs the code underneath it in a loop.
 
 This code is initially from Gabby, who gave it to Chris (who's given Gabby credit) thanks! :)
-
-## NextAssignment
-
-### Description & Code
-
-```python
-Code goes here
-
-```
-
-### Evidence
-
-### Wiring
-
-### Reflection
