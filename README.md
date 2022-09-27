@@ -84,7 +84,7 @@ file:///C:/Users/schen12/Pictures/Camera%20Roll/WIN_20220927_15_07_00_Pro.mp4
 https://www.tinkercad.com/things/16a7UBZ3Cle-neat-gogo-blad/editel?tenant=circuits
 ### Reflection
 
-
+The servo was difficult to code because I didn't know how or why I needed to download files to write functioning code.
 
 
 ## CircuitPython_LCD
