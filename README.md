@@ -138,7 +138,7 @@ https://www.tinkercad.com/things/d6I0Mx941Rc-tremendous-snicket-krunk/editel?ten
 ### Reflection
 
 I learned that I need to state the counter before I set the lcd and wehre to write it. I also learned that if you don't set the cursor, the numbers will be printed at random. I also had to state that the current state was equalivalent to the previous state. I had trouble with stating the integers (I didn't state enough).
-## NextAssignment
+## Ultra Sonic Sensor with Neopixel
 
 ### Description & Code
 The neopixel changes color according to the distance away from the ultrasonic sensor.
@@ -214,3 +214,29 @@ https://www.tinkercad.com/things/67dsxG9fJBI-super-kup/editel?tenant=circuit
 At first I trouble shot this project on my own, but after realizing that I had no idea was doing, and still being in Arduino mode, Chris thankfully gave me the code to the pixel. I spent an entire class period commenting the code, and figuring out what different words did, and how they effective the outputs. I learned how to better use the map() function, and the importance of the indentations. I learned that the "While True" function runs the code underneath it in a loop.
 
 This code is initially from Gabby, who gave it to Chris (who's given Gabby credit) thanks! :)
+
+## Title
+
+### Description & Code
+The neopixel changes color according to the distance away from the ultrasonic sensor.
+```python
+import simpleio
+import board
+import time
+from analogio import AnalogOut, AnalogIn
+
+motor = AnalogOut(board.A5) # assigning motor a pin
+pot = AnalogIn(board.A0) # assigning potentiometer a pin
+
+while True:
+    print(simpleio.map_range(pot.value, 96, 65520, 0, 65535))
+    motor.value = int(simpleio.map_range(pot.value, 96, 65520, 0, 65535)) # maps the motor value to the potentiometer
+    time.sleep(0.1)
+```
+
+### Evidence
+
+### Wiring
+
+### Reflection
+
