@@ -215,7 +215,7 @@ At first I trouble shot this project on my own, but after realizing that I had n
 
 This code is initially from Gabby, who gave it to Chris (who's given Gabby credit) thanks! :)
 
-## Title
+## Motor Control with Potentiometer
 
 ### Description & Code
 The neopixel changes color according to the distance away from the ultrasonic sensor.
