@@ -218,7 +218,7 @@ This code is initially from Gabby, who gave it to Chris (who's given Gabby credi
 ## Motor Control with Potentiometer
 
 ### Description & Code
-The neopixel changes color according to the distance away from the ultrasonic sensor.
+The motor is controlled with the potentiometer. The speed and voltage of the motor is controlled by the potentiometer.
 ```python
 import simpleio
 import board
