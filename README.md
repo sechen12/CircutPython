@@ -304,7 +304,9 @@ while True:
 
 ### Evidence
 
+https://user-images.githubusercontent.com/112981481/225731990-e23dd9d1-eaa7-4f6f-8de5-d98dc211c637.mp4
+
 ### Wiring
-
+![tempaturewiring](https://user-images.githubusercontent.com/112981481/225733918-45b95248-ce2e-4b48-98c1-cc81cd542057.png)
 ### Reflection
-
+Although this assignment was straightfoward in the sense that I simply had to surf the web for the appropriate code, my LCD printer was taking the power from the Aruduino, making it impossible for the words to appear. We had to use a switch to manage the flow of electricty. I learned that code is read by a series of yes's, and no's, or for Python, True and False. Code is also written with the utmost specificity; if one comma is misplaced, the entire script wil not run properly. It was crucial for us to use Google to find the proper syntax needed for a well working assignment. Code is less about the raw knowledge about the subject, but one's ability to use the resources around them.
