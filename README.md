@@ -240,3 +240,71 @@ while True:
 
 ### Reflection
 I learned that my initial thought if the motor isn't working is to refer to my Serial Monitor. I am able to collect data, and proceed to plan my next steps. In this case, there wasn't any power going to my board at all; from there I had to check my batteries and wiring to find the root of the problem. I used a Multi Meter to check the voltage of the batteries, and sure enough, one of the batteries had a negetive charge! My teacher and I had to get rid of that particular battery, but using the Serial Monitor to check the status of how the board is communicating with the board is something I now heavily rely on.
+
+## Tempature Sesor
+
+### Description & Code
+Use a TMP36 temperature sensor to print the values onto an LCD screen.
+```python
+import board
+import analogio
+import time
+import digitalio
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+
+
+
+# turn on lcd
+lcdPower = digitalio.DigitalInOut(board.D8)
+lcdPower.direction = digitalio.Direction.INPUT
+lcdPower.pull = digitalio.Pull.DOWN
+
+while lcdPower.value is False:
+    print("still sleeping")
+    time.sleep(0.1)
+
+time.sleep(1)
+print(lcdPower.value)
+print("running")
+
+i2c = board.I2C()
+
+
+
+lcd = LCD(I2CPCF8574Interface(i2c, 0x27), num_rows=2, num_cols=16)
+TMP36_PIN = board.A0  # Analog input connected to TMP36 output.
+
+
+# Function to simplify the math of reading the temperature.
+def tmp36_temperature_C(analogin):
+    millivolts = analogin.value * (analogin.reference_voltage * 1000 / 65535)
+    return (millivolts - 500) / 10
+
+
+
+# Create TMP36 analog input.
+tmp36 = analogio.AnalogIn(TMP36_PIN)
+
+# Loop forever.
+while True:
+    # Read the temperature in Celsius.
+    temp_C = tmp36_temperature_C(tmp36)
+    # Convert to Fahrenheit.
+    temp_F = (temp_C * 9/5) + 32
+    # Print out the value and delay a second before looping again.
+    lcd.set_cursor_pos(0, 0)
+    print("Temperature: {}C {}F".format(temp_C, temp_F))
+
+    lcd.print(("Temperature: {}C {}F".format(temp_C, temp_F)))
+    lcd.print((" "))
+
+    time.sleep(1.0)
+```
+
+### Evidence
+
+### Wiring
+
+### Reflection
+
