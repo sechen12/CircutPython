@@ -361,3 +361,4 @@ while True:
 ![YAYAYA](https://user-images.githubusercontent.com/112981481/228339131-dc2dd894-b310-47bd-8176-720f5c1e5d4a.png)
 
 ### Reflection
+This assignment used a lot of new commands that I wasn't familiar with. I had to use a code found from the web, and peice it together with code found from different classmates'.
