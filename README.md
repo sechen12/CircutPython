@@ -319,7 +319,7 @@ Although this assignment was straightfoward in the sense that I simply had to su
 
 ### Evidence
 
-
+![name](https://github.com/sechen12/CircutPython/blob/master/media/trafficlight%20(1).gif?raw=true)
 
 ### Wiring
 
