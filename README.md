@@ -415,4 +415,4 @@ while True:
 
 ### Reflection
 
-This assignmnet wasn't extremely difficult. The lcd is something we've been working with for the past few assignments, so the wiring and code was either found from previous projects, or it was already wired (or coded). The photointerrupter code is from previous interrupter code as well, so over all, the entire project was copy + paste. I didn't know how to reset the count after four seconds, so huge thanks to Sahana!
+This assignmnet wasn't extremely difficult. The lcd is something we've been working with for the past few assignments, so the wiring and code was either found from previous projects, or it was already wired (or coded). The photointerrupter code is from previous interrupter code as well, so over all, the entire project was copy + paste. I didn't know how to reset the count after four seconds, so huge thanks to Sahana! I pulled her gif and wiring diagram as well 😄
