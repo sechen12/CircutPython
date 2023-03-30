@@ -390,26 +390,29 @@ now = time.monotonic()  # Time in seconds since power on
 
 
 while True: 
-    if (now + 4) < time.monotonic():
-        print ("times up " + str(now) + " " + str(buttonPress))
-        now = time.monotonic()
+    if (now + 4) < time.monotonic():  # If the time less than four seconds
+        print ("times up" + str(now) + " " + str(buttonPress))  #  Print what is displayed
+        now = time.monotonic()  #Now is the time in seconds
         buttonPress = 0
     
-    cur_state = btn.value
+    cur_state = btn.value  # The current value is the button's value
     if cur_state != prev_state:
         if not cur_state:
-            buttonPress = buttonPress + 1
-            lcd.clear()
-            lcd.set_cursor_pos(0,0)
-            lcd.print("The number of interrupts is: " + str(buttonPress))
+            buttonPress = buttonPress + 1  #  Button press, or when the photointerrupter is interrupted = button press + 1
+            lcd.clear()  #  Then clear the lcd
+            lcd.set_cursor_pos(0,0)  #  Positioning the cursor
+            lcd.print("The number of interrupts is: " + str(buttonPress))  #  Print the number of button presses
     prev_state = cur_state
 ```
 
 ### Evidence
 
+![phtointerrupter](https://user-images.githubusercontent.com/112981481/228984162-697ecc8b-5663-41b3-8715-f02eb784f018.gif)
 
 ### Wiring
 
+![228350137-55d7ddd0-c263-4111-8555-3bfe5479992a](https://user-images.githubusercontent.com/112981481/228985026-327c69e0-a522-49af-b7df-e4ec1f174f22.png)
 
 ### Reflection
-This assignment used a lot of new commands that I wasn't familiar with. I had to use a code found from the web, and peice it together with code found from different classmates'.
+
+This assignmnet wasn't extremely difficult. The lcd is something we've been working with for the past few assignments, so the wiring and code was either found from previous projects, or it was already wired (or coded). The photointerrupter code is from previous interrupter code as well, so over all, the entire project was copy + paste. I didn't know how to reset the count after four seconds, so huge thanks to Sahana!
