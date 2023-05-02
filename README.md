@@ -366,7 +366,7 @@ This assignment used a lot of new commands that I wasn't familiar with. I had to
 ## Photointerrupter
 
 ### Description & Code
-
+Show the number of interruptions in a photointerrupter displayed on an LCD.
 ```
 
 import board
