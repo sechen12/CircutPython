@@ -314,7 +314,7 @@ Although this assignment was straightfoward in the sense that I simply had to su
 ## Rotary Code
 
 ### Description & Code
-
+Use a Rotary encoder to program words that will appear on the LCD display.
 ```
 
 import board
