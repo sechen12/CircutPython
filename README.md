@@ -139,7 +139,7 @@ https://www.tinkercad.com/things/d6I0Mx941Rc-tremendous-snicket-krunk/editel?ten
 ### Reflection
 
 I learned that I need to state the counter before I set the lcd and wehre to write it. I also learned that if you don't set the cursor, the numbers will be printed at random. I also had to state that the current state was equalivalent to the previous state. I had trouble with stating the integers (I didn't state enough).
-## Ultra Sonic Sensor with Neopixel
+## UltraSonicSensorwithNeopixel
 
 ### Description & Code
 The neopixel changes color according to the distance away from the ultrasonic sensor.
