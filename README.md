@@ -6,6 +6,7 @@ This repository will actually serve as a aid to help you get started with your o
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [CircuitPython_LCD](#CircuitPython_LCD)
 * [UltraSonicSensorwithNeopixel](#UltraSonicSensorwithNeopixel)
+* [MotorControlwithPotentiometer].(MotorControlwithPotentiometer)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
@@ -216,7 +217,7 @@ At first I trouble shot this project on my own, but after realizing that I had n
 
 This code is initially from Gabby, who gave it to Chris (who's given Gabby credit) thanks! :)
 
-## Motor Control with Potentiometer
+## MotorControlwithPotentiometer
 
 ### Description & Code
 The motor is controlled with the potentiometer. The speed and voltage of the motor is controlled by the potentiometer.
