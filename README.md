@@ -8,6 +8,7 @@ This repository will actually serve as a aid to help you get started with your o
 * [UltraSonicSensorwithNeopixel](#UltraSonicSensorwithNeopixel)
 * [MotorControlwithPotentiometer](#MotorControlwithPotentiometer)
 * [TemperatureSensor](#TemperatureSensor)
+* [RotaryCode](#RotaryCode)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
@@ -314,7 +315,7 @@ https://user-images.githubusercontent.com/112981481/225731990-e23dd9d1-eaa7-4f6f
 ### Reflection
 Although this assignment was straightfoward in the sense that I simply had to surf the web for the appropriate code, my LCD printer was taking the power from the Aruduino, making it impossible for the words to appear. We had to use a switch to manage the flow of electricty. I learned that code is read by a series of yes's, and no's, or for Python, True and False. Code is also written with the utmost specificity; if one comma is misplaced, the entire script wil not run properly. It was crucial for us to use Google to find the proper syntax needed for a well working assignment. Code is less about the raw knowledge about the subject, but one's ability to use the resources around them.
 
-## Rotary Code
+## RotaryCode
 
 ### Description & Code
 Use a Rotary encoder to program words that will appear on the LCD display.
