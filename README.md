@@ -6,7 +6,7 @@ This repository will actually serve as a aid to help you get started with your o
 * [CircuitPython_Servo](#CircuitPython_Servo)
 * [CircuitPython_LCD](#CircuitPython_LCD)
 * [UltraSonicSensorwithNeopixel](#UltraSonicSensorwithNeopixel)
-* [MotorControlwithPotentiometer].(MotorControlwithPotentiometer)
+* [MotorControlwithPotentiometer].(#MotorControlwithPotentiometer)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
