@@ -240,9 +240,9 @@ while True:
 ```
 
 ### Evidence
-https://github.com/aweder05/CircuitPython/blob/master/media/motorcontrolgif.gif?raw=true
+![motorcontrolgif](https://github.com/sechen12/CircutPython/assets/112981481/a5fb1b6d-bc04-49c3-a186-3c5390c3e911)
 ### Wiring
-https://github.com/lwhitmo/CircuitPython/raw/master/Images/Screenshot%202022-11-01%20115847.png
+
 ### Reflection
 I learned that my initial thought if the motor isn't working is to refer to my Serial Monitor. I am able to collect data, and proceed to plan my next steps. In this case, there wasn't any power going to my board at all; from there I had to check my batteries and wiring to find the root of the problem. I used a Multi Meter to check the voltage of the batteries, and sure enough, one of the batteries had a negetive charge! My teacher and I had to get rid of that particular battery, but using the Serial Monitor to check the status of how the board is communicating with the board is something I now heavily rely on.
 
