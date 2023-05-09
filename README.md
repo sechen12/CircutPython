@@ -9,6 +9,7 @@ This repository will actually serve as a aid to help you get started with your o
 * [MotorControlwithPotentiometer](#MotorControlwithPotentiometer)
 * [TemperatureSensor](#TemperatureSensor)
 * [RotaryCode](#RotaryCode)
+* [Photointerrupter](#Photointerrupter)
 * [NextAssignmentGoesHere](#NextAssignment)
 ---
 
